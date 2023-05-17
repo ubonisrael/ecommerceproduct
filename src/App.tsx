@@ -49,7 +49,9 @@ function App() {
     setCart(prev => [...prev, val])
   }
   const subFromCart = (val: number) => {
-    setCart(prev => prev.filter((item, i) => i !== val))
+    setCart(prev => prev.filter((item, i) => {
+      if (i !== val) return item
+    }))
   }
 
   const openCart = () => {
