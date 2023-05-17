@@ -1,0 +1,167 @@
+@import 'variables.scss';
+
+.container {
+    width: 100%;
+    height: 100%;
+    
+    @media screen and (min-width: $br-tablet) {
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    @media screen and (min-width: $br-laptop) {
+        padding: 4rem 0;
+    }
+}
+
+.productInfoContainer {
+    width: 100%;
+    padding: 1rem 1rem 4rem;
+
+    @media screen and (min-width: $br-tablet) {
+        max-width: 450px;
+        padding-top: 0;
+    }
+    @media screen and (min-width: $br-laptop) {
+        padding-top: 2rem;
+    }
+
+    article {
+        width: 100%;
+
+        h3 {
+            color: hsl($clr-orange);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+
+            @media screen and (min-width: $br-tablet) {
+                font-size: 1.125rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            margin-bottom: 1rem;
+
+            @media screen and (min-width: $br-tablet) {
+                font-size: 2rem;
+            }
+            @media screen and (min-width: $br-laptop) {
+                font-size: 2.75rem;
+            }
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            opacity: 0.5;
+
+            @media screen and (min-width: $br-tablet) {
+                font-size: 1.125rem;
+                line-height: 1.4;
+            }
+        }
+    }
+    
+    .productPriceContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0;
+
+        @media screen and (min-width: $br-tablet) {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .productPrice {
+                font-size: 1.75rem;
+                font-weight: 700;
+            }
+
+            .productDiscount {
+                padding: 0.25rem;
+                font-weight: 700;
+                color: hsl($clr-orange);
+                background: hsl($clr-paleOrange);
+                border-radius: 0.35rem;
+            }
+        }
+
+        .productDiscountAmount {
+            opacity: 0.4;
+            font-weight: 700;
+            text-decoration: line-through;
+        }
+    }
+
+    .productCartContainer {
+        width: 100%;
+        display: grid;
+        gap: 0.5rem;
+
+        @media screen and (min-width: $br-tablet) {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .productCartButtons {
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: hsl($clr-lightGrayishBlue);
+            border-radius: 0.5rem;
+
+            @media screen and (min-width: $br-tablet) {
+                width: 50%;
+            }
+
+            button {
+                background: none;
+                border: none;
+                color: hsl($clr-orange);
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            
+            p {
+                font-weight: 700;
+            }
+        }
+
+        .productAddCartBtn {
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: hsl($clr-white);
+            background: hsl($clr-orange);
+            border: none;
+            border-radius: 0.5rem;
+            
+            &:hover {
+                background: hsl(26 100% 55% / 0.5);
+            }
+
+            span {
+                width: 2rem;
+                height: 2rem;
+                background: url('../assets/images/icon-cart.svg') no-repeat center;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import 'variables.scss';
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: hsl($clr-black);
+    z-index: 99;
+    backdrop-filter: blur(2px);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.75rem;
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    color: hsl($clr-white);
+}
+
+.sliderBtns {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2.5rem;
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: $br-tablet) {
+        padding-inline: 0;
+
+        button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .prev {
+            position: relative;
+            left: -1.5rem;
+        }
+        .next {
+            position: relative;
+            right: -1.5rem;
+        }
+    }
+}

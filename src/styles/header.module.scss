@@ -1,0 +1,224 @@
+@import "variables.scss";
+
+.header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+
+  @media screen and (min-width: $br-tablet) {
+    height: 6rem;
+    border-bottom: 1px solid hsl(1, 1%, 1%, 0.1);
+  }
+
+  .logoContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .navOpenBtn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.25rem;
+    border: none;
+    background: url("../assets/images/icon-menu.svg") no-repeat center;
+
+    @media screen and (min-width: $br-tablet) {
+      display: none;
+    }
+
+  }
+
+  .navOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    background: hsl(($clr-black));
+    z-index: 9;
+
+    @media screen and (min-width: $br-tablet) {
+      position: static;
+      width: auto;
+      height: 100%;
+      transform: translateX(0);
+      background: none;
+    }
+
+    .navbar {
+      width: 70%;
+      height: 100%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: hsl(($clr-white));
+
+      @media screen and (min-width: $br-tablet) {
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .navCloseBtn {
+        width: 2rem;
+        height: 2rem;
+        align-self: flex-end;
+        border: none;
+        background: url("../assets/images/icon-close.svg") no-repeat center;
+
+        @media screen and (min-width: $br-tablet) {
+          display: none;
+        }
+      }
+
+      .navlist {
+        font-weight: $fw-700;
+        text-transform: capitalize;
+
+        @media screen and (min-width: $br-tablet) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+        }
+
+        li {
+          padding: 0.75rem 0;
+          border-bottom: 2px solid hsl($clr-white);
+          cursor: pointer;
+          transition: $transition;
+
+          @media screen and (min-width: $br-tablet) {
+            color: hsl(1 , 1%, 1%, 0.5);
+            border: none;
+          }
+
+          &:hover {
+            background: hsl(($clr-black));
+            color: hsl($clr-white);
+            padding-left: 0.5rem;
+            border-bottom: 2px solid hsl($clr-paleOrange);
+            
+            @media screen and (min-width: $br-tablet) {
+              color: black;
+              background: hsl($clr-white);
+              padding-left: 0;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .cartBtn {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+    .cartCount {
+      display: block;
+      position: relative;
+      top: 0;
+      left: 12px;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      color: hsl($clr-white);
+      background: hsl($clr-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+  }
+
+  img {
+    width: 1.5rem;
+  }
+}
+
+.showMenu {
+  transform: translateX(0) !important;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.slide {
+  animation: slideIn 1s;
+  -webkit-animation: slideIn 1s;
+  -moz-animation: slideIn 1s;
+  -o-animation: slideIn 1s;
+  -ms-animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-ms-keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
